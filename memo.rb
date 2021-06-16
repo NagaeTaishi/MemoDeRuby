@@ -6,7 +6,7 @@ class Make_memo
         name = gets.chomp  
         CSV.open("#{name}.csv", "w") do |test|
         puts "メモしたい内容を記載してください。" 
-        content = gets.chomp
+        content = STDIN.read
         test << [content]
         puts "csvファイルを保存しました。"
     end
@@ -18,7 +18,7 @@ class Edit_memo
         name = gets.chomp
         CSV.open("#{name}.csv", "a") do |test|
         puts "編集内容を入力してください。"
-        content = gets.chomp
+        content = STDIN.read
         test << [content]
         puts"csvファイルを上書き保存しました。"
     end
